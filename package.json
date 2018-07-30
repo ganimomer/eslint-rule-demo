@@ -1,0 +1,26 @@
+{
+  "name": "eslint-rule-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganimomer/eslint-rule-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ganimomer/eslint-rule-demo/issues"
+  },
+  "homepage": "https://github.com/ganimomer/eslint-rule-demo#readme",
+  "dependencies": {
+    "eslint": "5.2.0"
+  },
+  "devDependencies": {
+    "mocha": "5.2.0"
+  }
+}
