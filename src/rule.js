@@ -13,10 +13,8 @@ const isFirstItemAccess = node => node.type === 'MemberExpression' &&
 module.exports = {
     create(context) {
         return {
-            CallExpression(node) {
-                if (isCallToFilter(node) && isFirstItemAccess(node.parent)) {
+            'MemberExpression[property.value=0] > CallExpression[callee.property.name="filter"]'(node) {
                     context.report({node, message})
-                }
             }
         }
     }
