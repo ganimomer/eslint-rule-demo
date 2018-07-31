@@ -9,12 +9,14 @@ const ruleTester = new RuleTester({
 
 ruleTester.run('prefer-find', rule, {
     valid: [{
-        code: 'arr.find(x => x % 2)'
+        code: 'arr.find(x => x % 2)', 
+        parserOptions: {ecmaVersion: 2017}
     }],
     invalid: [{
        code: 'arr.filter(x => x % 2)[0]',
        errors: [{
            message: 'Prefer using `find` over `filter`'
-       }]
+       }],
+       parserOptions: {ecmaVersion: 2017}
     }]
 })
