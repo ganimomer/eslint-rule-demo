@@ -1,14 +1,20 @@
 'use strict';
 const {RuleTester} = require('eslint')
 const rule = require('../src/rule')
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+    parserOptions: {
+        ecmaVersion: 2018
+    }
+});
 
-ruleTester.run('rule', rule, {
-    valid: ['foo'],
+ruleTester.run('prefer-find', rule, {
+    valid: [{
+        code: 'arr.find(x => x % 2)'
+    }],
     invalid: [{
-       code: 'bar',
+       code: 'arr.filter(x => x % 2)[0]',
        errors: [{
-           message: 'baz'
+           message: 'Prefer using `find` over `filter`'
        }]
     }]
 })
